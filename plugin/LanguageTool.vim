@@ -253,7 +253,7 @@ function s:LanguageToolCheck(line1, line2) "{{{1
   let l:range = a:line1 . ',' . a:line2
   silent exe l:range . 'w!' . l:tmpfilename
 
-  let l:languagetool_cmd = 'java'
+  let l:languagetool_cmd = 'java --add-modules java.xml.bind'
   \ . ' -jar '  . s:languagetool_jar
   \ . ' -c '    . s:languagetool_encoding
   \ . (empty(s:languagetool_disable_rules) ? '' : ' -d '.s:languagetool_disable_rules)
